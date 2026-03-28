@@ -1,17 +1,19 @@
-# Preliminary Design Review (PDR)
+# Product requirements doc (PRD)
 ## Pose Randomizer Web App
 **Version:** 1.0
 **Date:** March 25, 2026
 **Author:** Deana
-**Status:** In Progress
+**Status:** completeled but could be better
 
 ---
 
 ## 1. Project Overview
 
+Pose Randomizer (temp name cus I cant think of anything else at the moment)
+
 Pose Randomizer is a simple, fun web app designed to help people who don't know how to pose for photos. Users select a pose category and hit a button that spins through curated inspiration images — like a slot machine — and lands on a random pose for them to try. The app is meant to be quick, low-pressure, and enjoyable to use.
 
-This is a solo portfolio project built to demonstrate front-end development skills including UI design, JavaScript logic, and deployment.
+
 
 ---
 
@@ -51,11 +53,8 @@ This is a solo portfolio project built to demonstrate front-end development skil
 
 The following ideas were considered but intentionally cut to keep the scope small and achievable:
 
-- User accounts or login
 - Saving or favoriting poses
-- Pose timer / countdown
 - Difficulty or mood tags
-- Monetization of any kind
 - Native mobile app (may be explored in a future version)
 
 ---
@@ -115,8 +114,8 @@ User sees pose
 **Overall vibe:** Cute, playful, pixel art inspired
 **Image style:** Real photos for pose inspiration
 **UI elements:** Pixel art aesthetic — buttons, icons, frames, and decorative touches
-**Color palette:** TBD — to be finalized in Figma
-**Typography:** TBD — likely a pixel or rounded font for headings, clean sans-serif for body text
+**Color palette:**  FBDBE4, B2C2E3, FFD571, DCE6F5,F399C0
+**Typography:** Pixelify Sans
 **Layout:** Single page, two screens (category picker → spin screen), centered, mobile-first
 
 ---
@@ -132,23 +131,9 @@ User sees pose
 | Hosting | Vercel |
 | Version Control | GitHub |
 
-No build tools, no frameworks, no dependencies. One `index.html` file plus supporting assets.
-
 ---
 
-## 11. Deliverables
-
-- [ ] Figma design file (wireframes + final UI)
-- [ ] `index.html` — main app file
-- [ ] `style.css` — all styles
-- [ ] `script.js` — all JavaScript logic
-- [ ] `/images` folder — curated pose photos organized by category
-- [ ] `README.md` — project description for GitHub
-- [ ] Live Vercel deployment link
-
----
-
-## 12. Future Considerations (Post-v1)
+## 11. Future Considerations (Post-v1)
 
 These are ideas to revisit after v1 is complete:
 
@@ -161,4 +146,3 @@ These are ideas to revisit after v1 is complete:
 
 ---
 
-*This document will be updated as the project progresses.*
