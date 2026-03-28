@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pose Randomizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Screen 1: Start ── -->
+  <main id="start-screen" class="screen active" onclick="goToSelection()">
+    <div class="frame-container">
+      <img class="frame-bg" src="assets/frame.svg" alt="" />
+
+      <!-- Title -->
+      <div class="start-title">Let's go<br>gambling!</div>
+
+      <!-- Pixel art decorations -->
+      <img class="decor heart-pixel"   src="assets/heart-pixel.svg"   alt="" />
+      <img class="decor star-pixel-2"  src="assets/star-pixel-2.svg"  alt="" />
+      <img class="decor music-note-1"  src="assets/music-note.svg"    alt="" />
+      <img class="decor music-note-2"  src="assets/music-note.svg"    alt="" />
+      <img class="decor star-pixel-4"  src="assets/star-pixel-4.svg"  alt="" />
+      <img class="decor star-pixel-3"  src="assets/star-pixel-3.svg"  alt="" />
+
+      <p class="tap-hint">tap anywhere to start ✨</p>
+    </div>
+  </main>
+
+  <!-- ── Screen 2: Selection ── -->
+  <main id="selection-screen" class="screen">
+    <div class="frame-container">
+      <img class="frame-bg" src="assets/frame.svg" alt="" />
+
+      <p class="select-title">select your type</p>
+
+      <!-- Top-left: Cake → Selfie -->
+      <img class="cat-icon icon-cake" src="assets/cake.svg" alt="Selfie" onclick="selectCategory('selfie')" />
+      <button class="cat-btn btn-selfie" onclick="selectCategory('selfie')">
+        <img src="assets/btn-dark.svg" class="btn-bg" alt="" />
+        <span class="btn-label">Selfie</span>
+      </button>
+
+      <!-- Top-right: Bow → Standing -->
+      <img class="cat-icon icon-bow" src="assets/bow.svg" alt="Standing" onclick="selectCategory('standing')" />
+      <button class="cat-btn btn-standing" onclick="selectCategory('standing')">
+        <img src="assets/btn-dark.svg" class="btn-bg" alt="" />
+        <span class="btn-label">Standing</span>
+      </button>
+
+      <!-- Bottom-left: Peach → Sitting -->
+      <img class="cat-icon icon-peach" src="assets/peach-icon.svg" alt="Sitting" onclick="selectCategory('sitting')" />
+      <button class="cat-btn btn-sitting" onclick="selectCategory('sitting')">
+        <img src="assets/btn-dark.svg" class="btn-bg" alt="" />
+        <span class="btn-label">Sitting</span>
+      </button>
+
+      <!-- Bottom-right: Watermelon → Group -->
+      <img class="cat-icon icon-watermelon" src="assets/watermelon.svg" alt="Group" onclick="selectCategory('group')" />
+      <button class="cat-btn btn-group" onclick="selectCategory('group')">
+        <img src="assets/btn-dark.svg" class="btn-bg" alt="" />
+        <span class="btn-label">Group</span>
+      </button>
+
+    </div>
+  </main>
+
+  <!-- ── Screen 3: Spin ── -->
+  <main id="spin-screen" class="screen">
+    <div class="frame-container">
+      <img class="frame-bg" src="assets/frame.svg" alt="" />
+
+      <!-- Pose photo fills the inner white area -->
+      <img class="pose-photo" id="pose-photo" src="" alt="Pose inspiration" />
+
+      <!-- Spin + Back buttons at the bottom of the inner area -->
+      <button class="action-btn spin-btn" id="spin-btn" onclick="spin()">
+        <img src="assets/btn-dark.svg" class="btn-bg" alt="" />
+        <span class="btn-label" id="spin-label">Spin</span>
+      </button>
+
+      <button class="action-btn back-btn" onclick="goToSelection()">
+        <img src="assets/btn-light.svg" class="btn-bg" alt="" />
+        <span class="btn-label">Back</span>
+      </button>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+/* ══════════════════════════════════════
+   Pose Randomizer — Stylesheet
+   ══════════════════════════════════════ */
+
+/* ──────────────────────────────────────
+   🎛️  ADJUST POSITIONS HERE
+   Change any number and refresh the
+   browser to see it move instantly.
+   left = how far from the LEFT edge
+   top  = how far from the TOP edge
+   ────────────────────────────────────── */
+:root {
+  /* Frame size */
+  --frame-width:  390px;
+  --frame-height: 570px;
+
+  /* ── Start Screen ── */
+  --gambling-text-left:   117px;   /* "Let's go gambling!" left/right */
+  --gambling-text-top:    260px;   /* "Let's go gambling!" up/down */
+
+  --heart-left:   243px;  --heart-top:   174px;
+  --star2-left:    94px;  --star2-top:   167px;
+  --note1-left:   225px;  --note1-top:   375px;
+  --note2-left:   285px;  --note2-top:   355px;
+  --star4-left:   104px;  --star4-top:   420px;
+  --star3-left:    76px;  --star3-top:   357px;
+
+  /* ── Selection Screen ── */
+  --select-title-left: 60px;    /* "select your type" left/right */
+  --select-title-top:  35px;   /* "select your type" up/down */
+
+  /* Icons */
+  --cake-left:    105px;  --cake-top:    163px;
+  --bow-left:     224px;  --bow-top:     168px;
+  --peach-left:    96px;  --peach-top:   331px;
+  --melon-left:   229px;  --melon-top:   331px;
+
+  /* Buttons */
+  --btn-selfie-left:    96px;  --btn-selfie-top:    258px;
+  --btn-standing-left: 218px;  --btn-standing-top:  258px;
+  --btn-sitting-left:   87px;  --btn-sitting-top:   424px;
+  --btn-group-left:    215px;  --btn-group-top:     424px;
+
+  /* ── Spin Screen ── */
+  --photo-left:    69px;
+  --photo-top:    135px;
+  --photo-width:  261px;
+  --photo-height: 296px;
+
+  --spinbtn-left:  92px;
+  --backbtn-left: 224px;
+  --btn-top:      436px;
+}
+
+/* ══════════════════════════════════════
+   BASE STYLES (no need to edit below)
+   ══════════════════════════════════════ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pixelify Sans', sans-serif;
+  background: #FFF5EC;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 40px;
+}
+
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* ── Frame ── */
+.frame-container {
+  position: relative;
+  width:  var(--frame-width);
+  height: var(--frame-height);
+}
+.frame-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Shared button styles ── */
+.btn-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  transform: scaleY(-1);
+}
+.btn-label {
+  position: relative;
+  z-index: 1;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════
+   SCREEN 1 — Start
+   ══════════════════════════════════════ */
+
+#start-screen {
+  cursor: pointer;
+  user-select: none;
+}
+
+.start-title {
+  position: absolute;
+  left:  var(--gambling-text-left);
+  top:   var(--gambling-text-top);
+  width: 174px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.tap-hint {
+  position: absolute;
+  bottom: 22px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  color: #A07090;
+}
+
+.decor {
+  position: absolute;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+.heart-pixel  { left: var(--heart-left); top: var(--heart-top); width: 79px;  height: 76px; }
+.star-pixel-2 { left: var(--star2-left); top: var(--star2-top); width: 59px;  height: 82px; }
+.star-pixel-4 { left: var(--star4-left); top: var(--star4-top); width: 44px;  height: 60px; }
+.star-pixel-3 { left: var(--star3-left); top: var(--star3-top); width: 32px;  height: 51px; }
+
+.music-note-1 {
+  left: var(--note1-left); top: var(--note1-top); width: 52px; height: 70px;
+  transform: rotate(32.32deg) skewX(13.92deg) scaleY(0.97);
+  transform-origin: center;
+}
+.music-note-2 {
+  left: var(--note2-left); top: var(--note2-top); width: 28px; height: 37px;
+  transform: rotate(32.32deg) skewX(13.92deg) scaleY(0.97);
+  transform-origin: center;
+}
+
+/* ══════════════════════════════════════
+   SCREEN 2 — Selection
+   ══════════════════════════════════════ */
+
+.select-title {
+  position: absolute;
+  top:  var(--select-title-top);
+  left: var(--select-title-left);
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+.cat-icon {
+  position: absolute;
+  width: 71px;
+  height: 71px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+
+.icon-cake       { left: var(--cake-left);  top: var(--cake-top);  }
+.icon-bow        { left: var(--bow-left);   top: var(--bow-top);   }
+.icon-peach      { left: var(--peach-left); top: var(--peach-top); }
+.icon-watermelon { left: var(--melon-left); top: var(--melon-top); }
+
+.cat-btn {
+  position: absolute;
+  width: 89px;
+  height: 22px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-selfie   { left: var(--btn-selfie-left);   top: var(--btn-selfie-top);   }
+.btn-standing { left: var(--btn-standing-left); top: var(--btn-standing-top); }
+.btn-sitting  { left: var(--btn-sitting-left);  top: var(--btn-sitting-top);  }
+.btn-group    { left: var(--btn-group-left);    top: var(--btn-group-top);    }
+
+.cat-btn:hover  .btn-bg { filter: brightness(1.05); }
+.cat-btn:active .btn-bg { filter: brightness(0.95); }
+
+/* ══════════════════════════════════════
+   SCREEN 3 — Spin
+   ══════════════════════════════════════ */
+
+.pose-photo {
+  position: absolute;
+  left:   var(--photo-left);
+  top:    var(--photo-top);
+  width:  var(--photo-width);
+  height: var(--photo-height);
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.action-btn {
+  position: absolute;
+  top:    var(--btn-top);
+  width:   82px;
+  height:  28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spin-btn { left: var(--spinbtn-left); }
+.back-btn { left: var(--backbtn-left); }
+
+.action-btn:hover:not(:disabled)  .btn-bg { filter: brightness(1.05); }
+.action-btn:active:not(:disabled) .btn-bg { filter: brightness(0.95); }
+.action-btn:disabled { cursor: not-allowed; opacity: 0.65; }
+
+/* Glow on frame while spinning */
+.frame-container.spinning .frame-bg {
+  animation: frameGlow 0.5s infinite alternate;
+}
+@keyframes frameGlow {
+  from { filter: drop-shadow(0 0 4px #FFAAC5); }
+  to   { filter: drop-shadow(0 0 12px #FF85A1); }
+}
